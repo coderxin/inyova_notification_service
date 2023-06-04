@@ -13,4 +13,34 @@
 ActiveRecord::Schema[7.0].define(version: 2023_06_02_155326) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "notification_assignments", force: :cascade do |t|
+    t.bigint "notification_id"
+    t.bigint "user_id"
+    t.datetime "seen_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["notification_id", "user_id"], name: "index_notification_assignments_on_notification_id_and_user_id", unique: true
+    t.index ["notification_id"], name: "index_notification_assignments_on_notification_id"
+    t.index ["user_id"], name: "index_notification_assignments_on_user_id"
+  end
+
+  create_table "notifications", force: :cascade do |t|
+    t.date "date", null: false
+    t.string "title", null: false
+    t.text "description", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "email", null: false
+    t.string "password_digest", null: false
+    t.boolean "admin", default: false
+    t.string "device_token"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["email"], name: "index_users_on_email", unique: true
+  end
+
 end
