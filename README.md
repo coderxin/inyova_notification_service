@@ -46,6 +46,8 @@ This implementation does require:
 - Postgres `14.8`
 - Redis `ruby-3.2.2`
 
+**I have committed `master.key` for testing purposes (normally this should not happen).**
+
 I have used RVM, therefore:
 
 ```bash
