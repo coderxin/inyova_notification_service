@@ -333,7 +333,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"user_ids\": [1, 2, 3, 4]\n}",
+							"raw": "{\n    \"assignment\": {\n        \"user_ids\": [1, 2]\n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
