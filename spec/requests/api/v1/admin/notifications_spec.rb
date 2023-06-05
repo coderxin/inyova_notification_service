@@ -96,6 +96,8 @@ RSpec.describe '/api/admin/v1/notifications', type: :request do
         end
 
         it 'renders a JSON response with the new notification' do
+          allow(Notifications::SchedulingService).to receive(:new).and_call_original
+
           post api_v1_admin_notifications_url,
                params: {
                  notification: {
@@ -121,6 +123,8 @@ RSpec.describe '/api/admin/v1/notifications', type: :request do
                                           'updated_at' => notification.updated_at.iso8601(3)
                                         }
                                       })
+
+          expect(Notifications::SchedulingService).to have_received(:new).with(notification)
         end
       end
     end

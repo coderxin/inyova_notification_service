@@ -16,6 +16,8 @@ module Api
           @notification = Notification.new(notification_params)
 
           if @notification.save
+            ::Notifications::SchedulingService.new(@notification).call
+
             render :show, status: :created, location: [:api, :v1, :admin, @notification]
           else
             render json: { errors: @notification.errors }, status: :unprocessable_entity
