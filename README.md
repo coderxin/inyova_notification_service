@@ -92,10 +92,7 @@ PATCH  /api/v1/notifications/:notification_id/reads
 GET    /api/v1/admin/notifications                                                             
 POST   /api/v1/admin/notifications                                                             
 GET    /api/v1/admin/notifications/:id                                                         
-PATCH  /api/v1/admin/notifications/:id                                                         
-PUT    /api/v1/admin/notifications/:id                                                         
-DELETE /api/v1/admin/notifications/:id                                                         
-
+                                                     
 GET    /api/v1/admin/notifications/:notification_id/assignments                               
 POST   /api/v1/admin/notifications/:notification_id/assignments
 ```
