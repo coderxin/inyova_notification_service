@@ -77,7 +77,9 @@ bin/dev
 
 ## API documentation
 
-For convenience please use [Postman collection](https://github.com/coderxin/inyova_notification_service/blob/features/notification_reads/docs/Notification%20Service%20API.postman_collection.json). 
+
+
+For convenience please use [Postman collection](https://github.com/coderxin/inyova_notification_service/blob/main/docs/Notification%20Service%20API.postman_collection.json). 
 
 ```
 POST   /api/v1/sessions                                                                        
