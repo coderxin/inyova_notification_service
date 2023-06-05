@@ -9,7 +9,11 @@ Rails.application.routes.draw do
       post :sessions, to: 'sessions#create'
       delete :sessions, to: 'sessions#destroy'
 
-      resources :notifications, only: [:index, :show]
+      resources :notifications, only: [:index, :show] do
+        scope module: 'notifications' do
+          resource :reads, only: :update
+        end
+      end
 
       namespace :admin do
         resources :notifications, only: [:index, :show, :create] do
